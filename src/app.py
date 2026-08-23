@@ -257,6 +257,37 @@ st.html(
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: min(100%, 360px);
       }
+      .architecture-comparison {
+        background: #F8FAFC;
+        border: 1px dashed #93C5FD;
+        border-radius: 7px;
+        color: #31506E;
+        font-size: 0.72rem;
+        padding: 0.35rem 0.5rem;
+        width: min(100%, 360px);
+      }
+      .architecture-comparison-title {
+        color: #1D4ED8;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      .architecture-comparison-flow {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        justify-content: center;
+      }
+      .architecture-comparison-step {
+        background: #FFFFFF;
+        border: 1px solid #CFE0F7;
+        border-radius: 5px;
+        padding: 0.2rem 0.35rem;
+      }
+      .architecture-comparison-arrow {
+        color: #3B82F6;
+        font-weight: 700;
+      }
       .architecture-outcome--success {
         background: #F0FDF4;
         border-color: #BBF7D0;
@@ -643,6 +674,18 @@ with st.expander("Project Insights", icon=":material/insights:"):
               <div class="architecture-node">User question</div>
               <div class="architecture-arrow">&darr;</div>
               <div class="architecture-node architecture-node--accent">Hybrid retrieval</div>
+              <div class="architecture-comparison">
+                <div class="architecture-comparison-title">Comparison-aware branch <small>when a comparison is detected</small></div>
+                <div class="architecture-comparison-flow">
+                  <span class="architecture-comparison-step">Comparison detected</span>
+                  <span class="architecture-comparison-arrow">&rarr;</span>
+                  <span class="architecture-comparison-step">Entity A focused retrieval</span>
+                  <span class="architecture-comparison-arrow">+</span>
+                  <span class="architecture-comparison-step">Entity B focused retrieval</span>
+                  <span class="architecture-comparison-arrow">&rarr;</span>
+                  <span class="architecture-comparison-step">Balanced evidence</span>
+                </div>
+              </div>
               <div class="architecture-split">
                 <div class="architecture-branch">Dense search<small>Pinecone</small></div>
                 <div class="architecture-branch">BM25 search<small>Keyword</small></div>
@@ -665,11 +708,11 @@ with st.expander("Project Insights", icon=":material/insights:"):
     evaluation_columns = st.columns(4, gap="small")
     for column, value, label in zip(
         evaluation_columns,
-        ["25", "88%", "100%", "Grounded"],
+        ["25", "96%", "Improved", "Grounded"],
         [
             "Evaluation questions",
             "Automatic behavior",
-            "New corpus tests",
+            "Comparison retrieval",
             "Refusal protection",
         ],
     ):
@@ -684,14 +727,19 @@ with st.expander("Project Insights", icon=":material/insights:"):
         st.caption(
             "25 evaluation questions across definitions, operations, exact fields, cross-document reasoning, comparisons, and unsupported queries."
         )
-        st.caption("22/25 automatic answer/refusal behavior. New TMF622/TMF629 tests: 10/10.")
-        st.caption("Primary remaining challenge: multi-entity comparison retrieval.")
+        st.caption("24 / 25 questions showed correct automatic answer/refusal behavior (96%).")
+        st.caption(
+            "Evaluation-driven improvement: Multi-entity comparison failures led to comparison-aware retrieval that preserves evidence for both entities before reranking."
+        )
+        st.caption(
+            "Remaining limitation: Scope-boundary questions can still confuse a related API operation with the broader business process being asked about."
+        )
 
         st.markdown("**Built incrementally**")
         st.html(
             """
             <div class="incremental-flow">
-              Dense RAG &rarr; BM25 &rarr; Hybrid + RRF &rarr; LLM Reranking &rarr; LangGraph Evidence Gate
+              Dense &rarr; BM25 &rarr; Hybrid + RRF &rarr; LLM Reranking &rarr; Evidence Gate &rarr; Comparison-Aware Retrieval
             </div>
             """
         )

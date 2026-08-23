@@ -29,9 +29,40 @@ or
 
 ---
 
+### Source Data and Repository Samples
+
+This project uses TM Forum API specification documents obtained through authorized access to the TM Forum website.
+
+The original PDF specifications and the full derived chunk corpus are intentionally **not included in this public repository**. Users should obtain the applicable TM Forum specifications directly from TM Forum and follow the corresponding access .
+
+The repository includes only a small schema-oriented sample:
+
+`data/sample/sample_chunks.json`
+
+This sample demonstrates the structure produced by the ingestion pipeline, including:
+
+- chunk ID
+- contextualized chunk text format
+- source document metadata
+- API ID and API name
+- API version
+- source page
+- content type
+
+The full local corpus used by the application contains **902 processed chunks across five TM Forum API specifications**. The sample file is provided only to illustrate the data structure expected by the ingestion and retrieval pipeline; it is not the complete knowledge corpus.
+
+The following directories are intentionally excluded from Git:
+
+- `data/raw/` — locally downloaded source documents
+- `data/processed/` — full processed/chunked corpus
+
+Both are excluded through `.gitignore`.
+
+---
+
 ## Knowledge Base
 
-The project uses only **publicly available TM Forum API specifications**.
+The project uses only  TM Forum API specifications obtained through authorized access to the TM Forum website.
 
 No proprietary employer, customer, or internal telecom documentation is included.
 
@@ -42,7 +73,6 @@ No proprietary employer, customer, or internal telecom documentation is included
 | TMF678 | Customer Bill Management 
 | TMF676 | Payment Management 
 | TMF629 | Customer Management 
-
 
 ---
 
@@ -80,6 +110,7 @@ The final architecture evolved iteratively as retrieval failures were discovered
                Grounded Answer       Refusal
                       │
                   Citations
+
 **Retrieval Pipeline**
 1. Dense retrieval — semantic vector search using Pinecone
 2. BM25 retrieval — exact keyword and technical-term matching
@@ -150,7 +181,8 @@ telco-rag/
 │
 ├── pyproject.toml
 └── README.md
-Running the Application
+
+## Running the Application
 1. Install dependencies
 uv sync
 2. Configure environment variables
@@ -166,6 +198,7 @@ Ingest the source PDFs
 uv run python src/ingest.py
 Create embeddings and upload vectors
 uv run python src/embed.py
+
 Evaluation
 Run the evaluation suite:
 uv run python src/evaluate.py
@@ -197,7 +230,9 @@ This project was built as part of a RAG application exercise focused on:
 Corpus → Chunking → Embeddings → Storage → Retrieval → Grounded Generation → Evaluation
 The Streamlit interface was developed as a vibe-coded UI on top of the RAG backend.
 
-Disclaimer
-This is an educational prototype built using publicly available TM Forum API documentation.
-It does not contain proprietary employer, customer, production, or internal telecom data.
-TM Forum names and API identifiers are used only to identify the public specifications included in the knowledge corpus.
+
+## Data & Licensing Note
+
+TM Forum documentation remains subject to TM Forum's applicable access and licensing terms. This repository contains the implementation, evaluation artifacts, architecture, and a small schema-oriented sample, but intentionally excludes the original TM Forum PDFs and the full derived document corpus.
+
+This project was created for educational and demonstration purposes.

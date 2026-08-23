@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "category": "definition",
+      "question": "What is a BillingAccount?",
+      "latency_seconds": 10.29,
+      "evidence_sufficient": true,
+      "expected_evidence_sufficient": true,
+      "behavior_correct": true,
+      "retrieved_chunk_count": 5
+    },
+    {
+      "category": "operation",
+      "question": "How do I retrieve a CustomerBill by ID?",
+      "latency_seconds": 7.48,
+      "evidence_sufficient": true,
+      "expected_evidence_sufficient": true,
+      "behavior_correct": true,
+      "retrieved_chunk_count": 5
+    },
+    {
+      "category": "exact_fields",
+      "question": "What fields are mandatory when creating a Payment?",
+      "latency_seconds": 5.68,
+      "evidence_sufficient": true,
+      "expected_evidence_sufficient": true,
+      "behavior_correct": true,
+      "retrieved_chunk_count": 5
+    },
+    {
+      "category": "cross_document",
+      "question": "Which API manages customer information versus billing-account information?",
+      "latency_seconds": 6.09,
+      "evidence_sufficient": true,
+      "expected_evidence_sufficient": true,
+      "behavior_correct": true,
+      "retrieved_chunk_count": 5
+    },
+    {
+      "category": "unsupported",
+      "question": "What is the SLA for resolving a payment dispute?",
+      "latency_seconds": 12.68,
+      "evidence_sufficient": false,
+      "expected_evidence_sufficient": false,
+      "behavior_correct": true,
+      "retrieved_chunk_count": 5
+    }
+  ],
+  "summary": {
+    "questions_tested": 5,
+    "average_latency_seconds": 8.45,
+    "minimum_latency_seconds": 5.68,
+    "maximum_latency_seconds": 12.68,
+    "median_latency_seconds": 7.48
+  }
+}

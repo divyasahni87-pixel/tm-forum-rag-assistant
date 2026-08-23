@@ -1,0 +1,33 @@
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Virtual environments
+.venv/
+venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wheels/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / temporary files
+*.log
+# Source PDFs - download separately from TM Forum
+data/raw/*.pdf
+
+# Local development test scripts
+src/test_nebius.py
+src/test_nebius_rerank.py

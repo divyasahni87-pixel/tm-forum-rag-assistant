@@ -1,0 +1,703 @@
+[
+  {
+    "id": "Q01",
+    "category": "definition",
+    "question": "What is a BillingAccount?",
+    "expected_api": [
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF666_0051",
+      "TMF666_0272",
+      "TMF666_0273",
+      "TMF666_0094",
+      "TMF666_0277"
+    ],
+    "retrieved_apis": [
+      "TMF666"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**BillingAccount**  \nA party account used for billing purposes. It includes a description of the bill structure, such as frequency, presentation media, format, and other related details. It is a specialization of the entity PartyAccount [TMF666 | Page 29 | Chunk TMF666_0051]. The resource is identified by a unique ID and a URL reference, and it may include attributes such as a name, description, payment status, credit limit, and related party information [TMF666 | Page 140 | Chunk TMF666_0272], [TMF666 | Page 141 | Chunk TMF666_0273], [TMF666 | Page 46 | Chunk TMF666_0094].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q02",
+    "category": "definition",
+    "question": "What is a SettlementAccount?",
+    "expected_api": [
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF666_0126",
+      "TMF666_0160",
+      "TMF666_0320",
+      "TMF666_0313",
+      "TMF666_0213"
+    ],
+    "retrieved_apis": [
+      "TMF666"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**SettlementAccount**  \nA party account used for settlement purposes. It includes a description of the bill structure (frequency, presentation media, format, and so on). It is a specialization of the entity PartyAccount [TMF666 | Page 62 | Chunk TMF666_0126].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q03",
+    "category": "multi_chunk",
+    "question": "What is the difference between a BillingAccount and a SettlementAccount?",
+    "expected_api": [
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF666_0272",
+      "TMF666_0126",
+      "TMF666_0125",
+      "TMF666_0094",
+      "TMF666_0270"
+    ],
+    "retrieved_apis": [
+      "TMF666"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**BillingAccount**  \nA BillingAccount is a type of account used for billing purposes, as indicated by the \"@type\": \"BillingAccount\" in the resource representation [TMF666 | Page 140 | Chunk TMF666_0272]. It is created via a POST operation to the /billingAccount endpoint and requires mandatory attributes such as name, relatedParty, relatedParty.@type, relatedParty.role, and @type [TMF666 | Page 140 | Chunk TMF666_0272]. It may include attributes like paymentStatus, creditLimit, and description [TMF666 | Page 46 | Chunk TMF666_0094].\n\n**SettlementAccount**  \nA SettlementAccount is a party account used for settlement purposes, including a description of the bill structure such as frequency, presentation media, and format [TMF666 | Page 62 | Chunk TMF666_0126]. It is a specialization of the entity PartyAccount [TMF666 | Page 62 | Chunk TMF666_0126].\n\n**Key difference**  \nThe key difference is that a BillingAccount is used for billing purposes and is created via a specific API operation, while a SettlementAccount is used for settlement purposes and includes a description of the bill structure (e.g., frequency, presentation media, format) [TMF666 | Page 62 | Chunk TMF666_0126].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q04",
+    "category": "operation",
+    "question": "How do I retrieve a BillingAccount by ID?",
+    "expected_api": [
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF666_0264",
+      "TMF666_0263",
+      "TMF666_0271",
+      "TMF666_0273",
+      "TMF666_0278"
+    ],
+    "retrieved_apis": [
+      "TMF666"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To retrieve a BillingAccount by ID, use the GET operation on the `/billingAccount/{id}` endpoint.\n\nRequest example:\nGET /billingAccount/5430\nContent-Type: application/json\n[TMF666 | Page 136 | Chunk TMF666_0264]\n\nThis operation retrieves a BillingAccount entity, with attribute selection enabled for all first-level attributes [TMF666 | Page 136 | Chunk TMF666_0264]. The response includes the BillingAccount resource, such as its `id`, `name`, and `relatedParty` information [TMF666 | Page 141 | Chunk TMF666_0273].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q05",
+    "category": "exact_fields",
+    "question": "What fields are mandatory when creating a BillingAccount?",
+    "expected_api": [
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF666_0272",
+      "TMF666_0273",
+      "TMF666_0254",
+      "TMF666_0242",
+      "TMF678_0087"
+    ],
+    "retrieved_apis": [
+      "TMF666",
+      "TMF678"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**BillingAccount**  \nWhen creating a BillingAccount, the mandatory fields are:  \n- `@type`  \n- `name`  \n- `relatedParty`  \n- `relatedParty.@type`  \n- `relatedParty.role`  \n\nThese fields are explicitly identified as mandatory in the TMF666 Account Management API documentation [TMF666 | Page 140 | Chunk TMF666_0272]. The `relatedParty` object must include the `role` and `@type` fields, and the `@type` field must be set to \"RelatedPartyRefOrRelatedPartyRoleRef\" as shown in the usage example [TMF666 | Page 141 | Chunk TMF666_0273]. The `@type` field for the BillingAccount itself must be set to \"BillingAccount\" [TMF666 | Page 140 | Chunk TMF666_0272].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q06",
+    "category": "definition",
+    "question": "What is a CustomerBill?",
+    "expected_api": [
+      "TMF678"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF678_0006",
+      "TMF678_0067",
+      "TMF678_0070",
+      "TMF678_0080",
+      "TMF678_0028"
+    ],
+    "retrieved_apis": [
+      "TMF678"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**CustomerBill**  \nA CustomerBill is a resource used to represent a bill issued to a customer, as defined within the TMF678 Customer Bill Management API. It includes attributes such as an identifier (`id`), a referenceable link (`href`), a billing account reference, and financial details like `taxExcludedAmount`, `taxIncludedAmount`, and `taxItem`. The `@type` attribute is used to indicate the actual class type of the entity, such as \"CustomerBill\", and supports polymorphism, allowing for inheritance from a base CustomerBill entity [TMF678 | Page 41 | Chunk TMF678_0067]. The resource supports operations such as listing CustomerBill objects via a GET request and partial updates using PATCH, with the `@type` attribute present in both request and response payloads [TMF678 | Page 43 | Chunk TMF678_0070].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q07",
+    "category": "operation",
+    "question": "How do I retrieve a CustomerBill by ID?",
+    "expected_api": [
+      "TMF678"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF678_0068",
+      "TMF678_0067",
+      "TMF678_0080",
+      "TMF678_0075",
+      "TMF678_0085"
+    ],
+    "retrieved_apis": [
+      "TMF678"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To retrieve a CustomerBill by ID, use the following API operation:\n\nGET /customerBill/{id}?fields=…  \nThis operation retrieves a CustomerBill entity. Attribute selection is enabled for all first level attributes. Filtering may be available depending on the compliance level supported by an implementation [TMF678 | Page 42 | Chunk TMF678_0068].\n\nThe request example shows a retrieval for a customer bill with ID CB-123, with fields limited to id, href, billing account, and tax included amount [TMF678 | Page 42 | Chunk TMF678_0068].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q08",
+    "category": "definition",
+    "question": "What is CustomerBillOnDemand?",
+    "expected_api": [
+      "TMF678"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF678_0028",
+      "TMF678_0029",
+      "TMF678_0052",
+      "TMF678_0058",
+      "TMF678_0060"
+    ],
+    "retrieved_apis": [
+      "TMF678"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**CustomerBillOnDemand**  \nThe CustomerBillOnDemand resource is used to manage the creation request of a customer bill in real-time (on demand) [TMF678 | Page 18 | Chunk TMF678_0028]. It includes fields such as `id`, `name`, `description`, `href`, `lastUpdate`, `billingAccount`, `relatedParty`, and `state`, where the `state` is of type `CustomerBillOnDemandStateType` and can have values including 'inProgress', 'rejected', 'done', 'terminatedWithError' [TMF678 | Page 20 | Chunk TMF678_0029]. The resource is associated with notifications such as \"Customer Bill On Demand Create Event\" and \"Customer Bill On Demand State Change Event\" [TMF678 | Page 31 | Chunk TMF678_0052].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q09",
+    "category": "multi_chunk",
+    "question": "What is the difference between CustomerBill and CustomerBillOnDemand?",
+    "expected_api": [
+      "TMF678"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF678_0068",
+      "TMF678_0085",
+      "TMF678_0028",
+      "TMF678_0035",
+      "TMF678_0029"
+    ],
+    "retrieved_apis": [
+      "TMF678"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**CustomerBill**  \nThe CustomerBill resource represents a customer bill in the system. It is referenced by a billing account and includes attributes such as the billing account reference, tax items, and a unique identifier. The resource is retrieved using the GET /customerBill/{id} operation, with attribute selection enabled for all first-level attributes [TMF678 | Page 42 | Chunk TMF678_0068]. The resource model includes fields like id, href, billingAccount, and taxCategory, and is identified by the @type \"CustomerBill\" [TMF678 | Page 42 | Chunk TMF678_0068].\n\n**CustomerBillOnDemand**  \nThe CustomerBillOnDemand resource is used to manage the creation request of a customer bill in real-time (on demand). It contains fields such as id, href, description, name, billingAccount, relatedParty, and state, with the state indicating the current status of the request (e.g., 'inProgress', 'rejected', 'done', 'terminatedWithError') [TMF678 | Page 22 | Chunk TMF678_0035]. The resource is retrieved using the GET /customerBillOnDemand/{id} operation, with attribute selection enabled for all first-level attributes [TMF678 | Page 52 | Chunk TMF678_0085]. It is identified by the @type \"CustomerBillOnDemand\" [TMF678 | Page 22 | Chunk TMF678_0035].\n\n**Key difference**  \nThe key difference is that CustomerBill represents an actual customer bill entity, while CustomerBillOnDemand represents a request to create a customer bill on demand, capturing the state of the request (e.g., inProgress, done) rather than the bill itself.",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": "Substantially grounded comparison: both CustomerBill and CustomerBillOnDemand are represented. “Actual customer bill entity” is a minor interpretive phrasing, but the core comparison is supported."
+  },
+  {
+    "id": "Q10",
+    "category": "exact_fields",
+    "question": "What fields are mandatory when creating a Payment?",
+    "expected_api": [
+      "TMF676"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF676_0045",
+      "TMF676_0057",
+      "TMF676_0046",
+      "TMF676_0025",
+      "TMF676_0014"
+    ],
+    "retrieved_apis": [
+      "TMF676"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Mandatory Fields When Creating a Payment**\n\nThe mandatory fields when creating a Payment are:\n\n- `totalAmount` [TMF676 | Page 37 | Chunk TMF676_0045]\n- `paymentMethod` [TMF676 | Page 37 | Chunk TMF676_0045]\n- `account` [TMF676 | Page 37 | Chunk TMF676_0045]\n\nThese fields are explicitly identified as mandatory in the \"Mandatory Attributes\" table for the Payment creation operation in the TMF676 Payment Management API [TMF676 | Page 37 | Chunk TMF676_0045].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q11",
+    "category": "operation",
+    "question": "How do I retrieve a Payment by ID?",
+    "expected_api": [
+      "TMF676"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF676_0043",
+      "TMF676_0033",
+      "TMF676_0001",
+      "TMF676_0034",
+      "TMF676_0042"
+    ],
+    "retrieved_apis": [
+      "TMF676"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To retrieve a Payment by ID, use the GET operation on the Payment resource with the specific payment ID in the path.\n\n**Endpoint:**\nGET /payment/{id}\n\n**Description:**\nThis operation retrieves a payment entity. Attribute selection is enabled for all first-level attributes. Filtering on sub-resources may be available depending on the compliance level supported by an implementation [TMF676 | Page 35 | Chunk TMF676_0043].\n\n**Request Example:**\nGET serverRoot/paymentManagement/v4/payment/12345 Accept: application/json\n\n**Response Example (200 OK):**\n{\n  \"id\": \"12345\",\n  \"href\": \"https://host:port/paymentManagement/v4/payment/12345\",\n  \"correlatorId\": \"67890\",\n  \"paymentDate\": \"2020-01-08T12:06:38.230Z\",\n  \"name\": \"Example\",\n  \"description\": \"a payment example\",\n  \"status\": \"done\",\n  \"statusDate\": \"2020-01-08T12:06:38.230Z\",\n  \"@type\": \"Payment\",\n  \"amount\": {\n    \"unit\": \"EUR\",\n    \"value\": 10\n  },\n  \"taxAmount\": {\n    \"unit\": \"EUR\",\n    \"value\": 1.6\n  },\n  \"totalAmount\": {\n    \"unit\": \"EUR\",\n    \"value\": 11.6\n  },\n  \"channel\": {\n    ...\n  }\n} [TMF676 | Page 35 | Chunk TMF676_0043]",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q12",
+    "category": "multi_chunk",
+    "question": "What is the difference between a Payment and a Refund?",
+    "expected_api": [
+      "TMF676"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF676_0005",
+      "TMF676_0017",
+      "TMF676_0016",
+      "TMF676_0057",
+      "TMF676_0026"
+    ],
+    "retrieved_apis": [
+      "TMF676"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Payment**  \nThe Payment resource represents a performed payment and contains both information about the payment and the payment method used to perform it [TMF676 | Page 10 | Chunk TMF676_0005].\n\n**Refund**  \nThe Refund resource is created to reverse or return funds, and it includes fields such as an account reference, amount to be refunded (net of taxes), and a reference to a payment (payment reference) [TMF676 | Page 17 | Chunk TMF676_0016], [TMF676 | Page 18 | Chunk TMF676_0017], [TMF676 | Page 46 | Chunk TMF676_0057].\n\n**Key difference**  \nA Payment represents a performed payment, while a Refund is a resource that may reference a Payment and contains information about an amount to be refunded (net of taxes) [TMF676 | Page 10 | Chunk TMF676_0005], [TMF676 | Page 17 | Chunk TMF676_0016].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": "Substantially grounded comparison: Payment and Refund are both represented and the core distinction is supported. “Reverse or return funds” is a minor strengthening of the documented “amount to be refunded.”"
+  },
+  {
+    "id": "Q13",
+    "category": "cross_document",
+    "question": "How are Payment and CustomerBill related?",
+    "expected_api": [
+      "TMF676",
+      "TMF678"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF678_0013",
+      "TMF678_0025",
+      "TMF678_0054",
+      "TMF678_0052",
+      "TMF678_0070"
+    ],
+    "retrieved_apis": [
+      "TMF678"
+    ],
+    "expected_api_found": false,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Payment**  \nPayment is a resource that represents a financial transaction. It may be associated with one or more CustomerBill resources through the appliedPayment relationship. A Payment can be linked to multiple bills, and a single bill can have multiple applied payments, indicating a many-to-many (n:m) relationship between Payment and CustomerBill [TMF678 | Page 11 | Chunk TMF678_0013]. The Payment is referenced within the appliedPayment field of a CustomerBill, where the payment field contains the Payment's id, href, and type [TMF678 | Page 16 | Chunk TMF678_0025].\n\n**CustomerBill**  \nCustomerBill is a resource that represents a bill issued to a customer. It includes a billNo, billDate, amountDue, and a list of appliedPayment entries. Each appliedPayment contains a reference to a Payment, indicating that the payment has been applied to the bill. The CustomerBill may have multiple applied payments, reflecting partial or full payments over time. The relationship between CustomerBill and Payment is defined through the appliedPayment field, which contains a reference to a Payment resource [TMF678 | Page 16 | Chunk TMF678_0025].\n\n**Key difference**  \nThe key difference is that Payment is a financial transaction entity that may be applied to one or more CustomerBill resources, while CustomerBill is a bill entity that may have multiple applied payments associated with it. The relationship between them is defined by the appliedPayment field in the CustomerBill, which references a Payment, and the relationship is explicitly described as many-to-many (n:m) [TMF678 | Page 11 | Chunk TMF678_0013].",
+    "manual_retrieval_relevant": false,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": "Retrieval coverage is incomplete: only TMF678 was retrieved although the expected APIs include TMF676 and TMF678. TMF678 explicitly supports the Payment–CustomerBill appliedPayment relationship, so the answer remains substantially faithful; “financial transaction” is a minor wording overreach."
+  },
+  {
+    "id": "Q14",
+    "category": "unsupported",
+    "question": "What is the SLA for resolving a payment dispute?",
+    "expected_api": [],
+    "should_answer": false,
+    "retrieved_chunk_ids": [
+      "TMF676_0061",
+      "TMF676_0025",
+      "TMF676_0051",
+      "TMF676_0007",
+      "TMF676_0026"
+    ],
+    "retrieved_apis": [
+      "TMF676"
+    ],
+    "expected_api_found": null,
+    "evidence_sufficient": false,
+    "behavior_correct": true,
+    "answer": "I could not find enough information in the retrieved TM Forum documentation.",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q15",
+    "category": "unsupported",
+    "question": "What API should I use to cancel a mobile phone subscription?",
+    "expected_api": [],
+    "should_answer": false,
+    "retrieved_chunk_ids": [
+      "TMF622_0291",
+      "TMF622_0147",
+      "TMF622_0176",
+      "TMF622_0145",
+      "TMF622_0008"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": null,
+    "evidence_sufficient": true,
+    "behavior_correct": false,
+    "answer": "To cancel a mobile phone subscription, you should use the **TMF622 Product Ordering Management** API [TMF622 | Page 153 | Chunk TMF622_0291].\n\nThis API includes the **CancelProductOrder** resource, which is used to represent a request to cancel a product order, such as a mobile phone subscription [TMF622 | Page 71 | Chunk TMF622_0147]. The operation to retrieve a CancelProductOrder by ID is available via the endpoint:\n\n`GET /cancelProductOrder/{id}` [TMF622 | Page 153 | Chunk TMF622_0291]\n\nThe CancelProductOrder resource contains fields such as `requestedCancellationDate`, `cancellationReason`, and `productOrder` (a reference to the original Product Order), which are used to manage the cancellation process [TMF622 | Page 70 | Chunk TMF622_0145].\n\nTherefore, the correct API to use for canceling a mobile phone subscription is **TMF622 Product Ordering Management**, specifically through the **CancelProductOrder** resource and its associated operations.",
+    "manual_retrieval_relevant": false,
+    "manual_answer_faithful": false,
+    "manual_answer_complete": false,
+    "manual_citation_correct": false,
+    "manual_failure_notes": "Scope-boundary failure. The question asks about cancelling a mobile phone subscription, while the retrieved evidence concerns cancelling a ProductOrder. The system should refuse rather than map the request to TMF622 CancelProductOrder."
+  },
+  {
+    "id": "Q16",
+    "category": "definition",
+    "question": "What is a ProductOrder?",
+    "expected_api": [
+      "TMF622"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF622_0014",
+      "TMF622_0205",
+      "TMF622_0221",
+      "TMF622_0213",
+      "TMF622_0191"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "A ProductOrder is a type of order which can be used to place an order between a customer and a service provider or between a service provider and a partner and vice versa [TMF622 | Page 13 | Chunk TMF622_0014]. It is a resource within the Product Ordering Management API, identified by the @type \"ProductOrder\" in JSON examples [TMF622 | Page 103 | Chunk TMF622_0205]. It includes attributes such as category, description, state, expectedCompletionDate, externalId, creationDate, priority, requestedCompletionDate, requestedStartDate, channel, and note [TMF622 | Page 108 | Chunk TMF622_0213]. The resource can be created using a POST operation on the /productOrder endpoint with mandatory attributes including channel.channel, channel.role, orderRelationship.id, orderRelationship.relationshipType, orderTotalPrice.price, orderTotalPrice.priceAlteration.price, orderTotalPrice.priceAlteration.priceType, orderTotalPrice.priceType, productOrderItem, productOrderItem.@type, productOrderItem.action, productOrderItem.id, and @type [TMF622 | Page 103 | Chunk TMF622_0205].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q17",
+    "category": "operation",
+    "question": "How do I retrieve a ProductOrder by ID?",
+    "expected_api": [
+      "TMF622"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF622_0192",
+      "TMF622_0191",
+      "TMF622_0289",
+      "TMF622_0288",
+      "TMF622_0178"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To retrieve a ProductOrder by ID, use the following API operation:\n\nGET /productOrder/{id}?fields=…  \nThis operation retrieves a ProductOrder entity. Attribute selection is enabled for all first level attributes. Filtering may be available depending on the compliance level supported by an implementation [TMF622 | Page 95 | Chunk TMF622_0192].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q18",
+    "category": "operation_distinction",
+    "question": "How do I cancel a ProductOrder?",
+    "expected_api": [
+      "TMF622"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF622_0288",
+      "TMF622_0293",
+      "TMF622_0004",
+      "TMF622_0145",
+      "TMF622_0147"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**ProductOrder**\nA ProductOrder is a resource managed by the TMF622 Product Ordering Management API. It represents a request to order a product and supports operations such as creation, partial update, retrieval, and deletion for administrative purposes [TMF622 | Page 5 | Chunk TMF622_0004]. Deletion of a ProductOrder is performed using the DELETE /productOrder/{id} operation, which removes the entity entirely [TMF622 | Page 151 | Chunk TMF622_0288].\n\n**CancelProductOrder**\nA CancelProductOrder is a resource used to request the cancellation of an existing ProductOrder. It is created using the POST /cancelProductOrder operation, which requires the `productOrder` field referencing the ProductOrder to be cancelled, along with a `cancellationReason` and `requestedCancellationDate` [TMF622 | Page 154 | Chunk TMF622_0293]. The resource includes fields such as `creationDate`, `effectiveCancellationDate`, `state`, and `href`, and its state can be tracked through the `state` field [TMF622 | Page 70 | Chunk TMF622_0145]. The API supports retrieving CancelProductOrder entities via GET /cancelProductOrder [TMF622 | Page 154 | Chunk TMF622_0293].\n\n**Key difference**\nDeleting a ProductOrder (via DELETE /productOrder/{id}) removes the order entity entirely, while creating a CancelProductOrder (via POST /cancelProductOrder) requests the cancellation of an existing order without necessarily deleting it. The two operations serve different purposes: deletion is administrative, while cancellation is a request to stop the order process, with the cancellation itself being tracked via a separate resource [TMF622 | Page 5 | Chunk TMF622_0004][TMF622 | Page 151 | Chunk TMF622_0288][TMF622 | Page 154 | Chunk TMF622_0293].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q19",
+    "category": "exact_fields",
+    "question": "What fields are mandatory when creating a CancelProductOrder?",
+    "expected_api": [
+      "TMF622"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF622_0293",
+      "TMF622_0145",
+      "TMF622_0290",
+      "TMF622_0173",
+      "TMF622_0289"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**CancelProductOrder**\nWhen creating a CancelProductOrder, the mandatory attributes are: `productOrder`, `productOrder.@type`, and `@type` [TMF622 | Page 154 | Chunk TMF622_0293]. The `productOrder` field must reference an existing Product Order and include the `id` and `@type` fields, with `@type` set to \"ProductOrderRef\" [TMF622 | Page 154 | Chunk TMF622_0293]. The `@type` field of the CancelProductOrder itself must be \"CancelProductOrder\" [TMF622 | Page 154 | Chunk TMF622_0293].\n\n**Key difference**\nThe mandatory fields for creating a CancelProductOrder are explicitly defined as `productOrder`, `productOrder.@type`, and `@type` [TMF622 | Page 154 | Chunk TMF622_0293]. No other fields are stated as mandatory in the provided source chunks.",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q20",
+    "category": "enumeration_grounding",
+    "question": "What actions can be performed on a ProductOrderItem?",
+    "expected_api": [
+      "TMF622"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF622_0114",
+      "TMF622_0003",
+      "TMF622_0116",
+      "TMF622_0276",
+      "TMF622_0239"
+    ],
+    "retrieved_apis": [
+      "TMF622"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**ProductOrderItem**\nA ProductOrderItem is an identified part of a product order, representing a specific item within the order [TMF622 | Page 56 | Chunk TMF622_0116]. It includes attributes such as the action to be performed (e.g., \"add\"), the quantity ordered, the product or offering being ordered, and the state of the item [TMF622 | Page 56 | Chunk TMF622_0116]. The action field specifies the operation to be performed on the entity managed by the item, with example values including \"add\" [TMF622 | Page 144 | Chunk TMF622_0276]. The item may also reference related entities such as appointments, billing accounts, and product offering qualifications [TMF622 | Page 56 | Chunk TMF622_0114].\n\n**Actions on a ProductOrderItem**\nThe actions that can be performed on a ProductOrderItem are defined by the `action` field, which is of type `ItemActionType` [TMF622 | Page 56 | Chunk TMF622_0114]. The retrieved documentation explicitly supports the action \"add\" as a valid value, as shown in a JSON example where `\"action\": \"add\"` is used [TMF622 | Page 144 | Chunk TMF622_0276]. No other specific actions are listed in the provided chunks, and the complete set of supported actions is not enumerated. Therefore, only the action \"add\" is confirmed by the retrieved documentation as being supported.",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q21",
+    "category": "definition",
+    "question": "What is a Customer?",
+    "expected_api": [
+      "TMF629"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF629_0001",
+      "TMF629_0002",
+      "TMF629_0025",
+      "TMF629_0042",
+      "TMF629_0047"
+    ],
+    "retrieved_apis": [
+      "TMF629"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Customer**  \nA Customer is a person, an organization, or another service provider who buys products from an enterprise, receives free offers or services, resells the enterprise’s products, or leases the enterprise’s resources for utilization by the other service provider’s products and services [TMF629 | Page 4 | Chunk TMF629_0002]. The Customer resource contains information such as its identifier, name, status and validity, description, characteristics, contact medium, related customer account, related party, and customer credit profile information [TMF629 | Page 4 | Chunk TMF629_0002]. The Customer management API supports retrieval, creation, full or partial update, and deletion of customers [TMF629 | Page 4 | Chunk TMF629_0002]. The API assumes that information regarding customer accounts and payment means is obtained via the Account Management API [TMF629 | Page 4 | Chunk TMF629_0002].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q22",
+    "category": "operation",
+    "question": "How do I retrieve a Customer by ID?",
+    "expected_api": [
+      "TMF629"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF629_0036",
+      "TMF629_0037",
+      "TMF629_0040",
+      "TMF629_0025",
+      "TMF629_0041"
+    ],
+    "retrieved_apis": [
+      "TMF629"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To retrieve a Customer by ID, use the GET method on the `/customer/{id}` endpoint.\n\nThe operation is defined as:  \nGET /customer/{id}?fields=… [TMF629 | Page 22 | Chunk TMF629_0036]\n\nThis operation retrieves a Customer entity. Attribute selection is enabled for all first-level attributes. Filtering may be available depending on the compliance level supported by an implementation [TMF629 | Page 22 | Chunk TMF629_0037].\n\nExample request:  \nGET /customer/1140  \nContent-Type: application/json [TMF629 | Page 22 | Chunk TMF629_0037]",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q23",
+    "category": "exact_fields",
+    "question": "What fields are mandatory when creating a Customer?",
+    "expected_api": [
+      "TMF629"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF629_0042",
+      "TMF629_0047",
+      "TMF629_0044",
+      "TMF629_0054",
+      "TMF629_0037"
+    ],
+    "retrieved_apis": [
+      "TMF629"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Customer**  \nWhen creating a Customer, the mandatory fields are: `@type`, `name`, `engagedParty`, `engagedParty.@type`, and `engagedParty.id` [TMF629 | Page 25 | Chunk TMF629_0042]. These attributes must be included in the request payload to successfully create a Customer entity. The `@type` field must be set to \"Customer\" [TMF629 | Page 25 | Chunk TMF629_0042]. The `engagedParty` object must include `@type`, `id`, and `name` fields, with `@type` set to \"PartyRef\" [TMF629 | Page 25 | Chunk TMF629_0042]. The `name` field is a top-level attribute and must be provided [TMF629 | Page 25 | Chunk TMF629_0042]. No other fields are explicitly identified as mandatory in the provided source chunks.",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q24",
+    "category": "update",
+    "question": "How do I update a customer's contact information?",
+    "expected_api": [
+      "TMF629"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF629_0055",
+      "TMF629_0054",
+      "TMF629_0047",
+      "TMF629_0024",
+      "TMF629_0002"
+    ],
+    "retrieved_apis": [
+      "TMF629"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "To update a customer's contact information, use the PATCH method on the customer resource endpoint with a JSON Patch request.\n\nThe `contactMedium` attribute is patchable [TMF629_0047]. For example, to update the preferred status of a contact medium in Paris, use the following request:\n\nPATCH /customer/{id}  \nContent-Type: application/json-patch-query+json  \n[  \n  {  \n    \"op\": \"replace\",  \n    \"path\": \"/contactMedium/preferred?city=Paris\",  \n    \"value\": true  \n  }  \n]  \n\nThis example modifies the `preferred` field of a `GeographicAddressContactMedium` where the `city` is \"Paris\" [TMF629_0055]. The `contactMedium` sub-resource includes fields such as `preferred`, `contactType`, `validFor`, and `city`, which are part of the customer's contact information [TMF629_0054]. The `@type` field of the contact medium (e.g., `PhoneContactMedium` or `GeographicAddressContactMedium`) identifies the type of contact medium [TMF629_0024].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  },
+  {
+    "id": "Q25",
+    "category": "cross_document",
+    "question": "Which API manages customer information versus billing-account information?",
+    "expected_api": [
+      "TMF629",
+      "TMF666"
+    ],
+    "should_answer": true,
+    "retrieved_chunk_ids": [
+      "TMF629_0002",
+      "TMF678_0014",
+      "TMF666_0001",
+      "TMF629_0003",
+      "TMF678_0002"
+    ],
+    "retrieved_apis": [
+      "TMF629",
+      "TMF678",
+      "TMF666"
+    ],
+    "expected_api_found": true,
+    "evidence_sufficient": true,
+    "behavior_correct": true,
+    "answer": "**Customer Information**\nThe TMF629 Customer Management API manages customer information, including the customer's identifier, name, status and validity, description, characteristics, contact medium, related customer account, related party, and customer credit profile information [TMF629 | Page 4 | Chunk TMF629_0002]. The API supports retrieval, creation, full or partial update, and deletion of customers [TMF629 | Page 4 | Chunk TMF629_0002]. This API assumes that information regarding customer accounts and payment means is obtained by accessing the Account Management API [TMF629 | Page 4 | Chunk TMF629_0003].\n\n**Billing-Account Information**\nThe TMF666 Account Management API manages billing and settlement accounts, as well as financial accounting (account receivable) contexts [TMF666 | Page 6 | Chunk TMF666_0001]. It allows creation, update, and retrieval of account information for business models such as B2C, B2B2C, and B2B [TMF666 | Page 6 | Chunk TMF666_0001]. The API also supports creation and query of bill items for partners or customers to check their invoice [TMF666 | Page 6 | Chunk TMF666_0001]. The management of party and party roles is out of the scope of this API, and is handled by other TMF APIs such as Party Management, Customer Management, and Party Role Management [TMF666 | Page 6 | Chunk TMF666_0001].\n\n**Key difference**\nThe TMF629 Customer Management API manages customer data, including customer identity, status, and related party information, while the TMF666 Account Management API manages billing and settlement accounts, including account receivable contexts and bill items [TMF629 | Page 4 | Chunk TMF629_0002][TMF666 | Page 6 | Chunk TMF666_0001]. The customer management API does not manage account or payment means data, which are instead obtained via the Account Management API [TMF629 | Page 4 | Chunk TMF629_0003].",
+    "manual_retrieval_relevant": true,
+    "manual_answer_faithful": true,
+    "manual_answer_complete": true,
+    "manual_citation_correct": true,
+    "manual_failure_notes": ""
+  }
+]

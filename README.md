@@ -80,7 +80,7 @@ The final architecture evolved iteratively as retrieval failures were discovered
                Grounded Answer       Refusal
                       │
                   Citations
-Retrieval Pipeline
+**Retrieval Pipeline**
 1. Dense retrieval — semantic vector search using Pinecone
 2. BM25 retrieval — exact keyword and technical-term matching
 3. Reciprocal Rank Fusion (RRF) — combines dense and sparse rankings
@@ -88,7 +88,8 @@ Retrieval Pipeline
 5. LangGraph evidence check — determines whether retrieved evidence is sufficient
 6. Grounded generation — answers only from retrieved documentation
 7. Inline citations — identifies the API, source page, and chunk
-Example citation:
+
+**Example citation:**
 [TMF622 | Page 154 | Chunk TMF622_0293]
 Why Hybrid Retrieval?
 The project initially used only dense semantic retrieval.
@@ -101,14 +102,15 @@ Mandatory Attributes
 However, BM25 struggled when closely related resources shared similar terminology — for example, Payment and Refund.
 The two approaches were therefore combined using hybrid retrieval + Reciprocal Rank Fusion.
 LLM reranking was then added because the correct evidence was often present in the candidate set but was not always ranked first.
-Evidence-Based Refusal
+
+**Evidence-Based Refusal**
 A key design goal was preventing unsupported answers.
 LangGraph performs an evidence-sufficiency check before answer generation.
 For example:
 Question
 What is the SLA for resolving a payment dispute?
 
-Response
+**Response**
 I could not find enough information in the retrieved TM Forum documentation.
 
 The assistant therefore has an explicit answer-or-refuse path rather than generating an answer from weakly related evidence.
@@ -116,7 +118,7 @@ Grounding Rules
 The answer-generation prompt includes strict grounding requirements.
 
 
-Project Structure
+**Project Structure**
 telco-rag/
 │
 ├── data/

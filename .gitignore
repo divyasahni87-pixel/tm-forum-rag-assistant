@@ -25,8 +25,11 @@ Thumbs.db
 
 # Logs / temporary files
 *.log
-# Source PDFs - download separately from TM Forum
-data/raw/*.pdf
+# TM Forum source and derived corpus - local only
+data/raw/
+data/processed/
+
+# Small schema-only samples under data/sample/ may be committed
 
 # Local development test scripts
 src/test_nebius.py

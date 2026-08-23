@@ -1,0 +1,44 @@
+[
+  {
+    "chunk_id": "TMF676_SAMPLE_001",
+    "text": "TMF676 Payment Management | concept | Page 7\n\n[Sample text omitted from the public repository. This entry demonstrates the processed chunk structure used by the RAG pipeline.]",
+    "metadata": {
+      "source": "TMF676_Payment_Management_API_v4.0.0_specification.pdf",
+      "format": "text",
+      "page": 7,
+      "api_id": "TMF676",
+      "api_name": "Payment Management",
+      "version": "4.0.0",
+      "chunk_id": "TMF676_SAMPLE_001",
+      "content_type": "concept"
+    }
+  },
+  {
+    "chunk_id": "TMF622_SAMPLE_001",
+    "text": "TMF622 Product Ordering Management | operation | Page 154\n\n[Sample text omitted from the public repository. This entry demonstrates an operation-type processed chunk.]",
+    "metadata": {
+      "source": "TMF622_Product_Ordering_Management_API_v5.0.0_specification.pdf",
+      "format": "text",
+      "page": 154,
+      "api_id": "TMF622",
+      "api_name": "Product Ordering Management",
+      "version": "5.0.0",
+      "chunk_id": "TMF622_SAMPLE_001",
+      "content_type": "operation"
+    }
+  },
+  {
+    "chunk_id": "TMF629_SAMPLE_001",
+    "text": "TMF629 Customer Management | field_definition | Page 28\n\n[Sample text omitted from the public repository. This entry demonstrates a field-definition processed chunk.]",
+    "metadata": {
+      "source": "TMF629_Customer_Management_API_v5.0.0_specification.pdf",
+      "format": "text",
+      "page": 28,
+      "api_id": "TMF629",
+      "api_name": "Customer Management",
+      "version": "5.0.0",
+      "chunk_id": "TMF629_SAMPLE_001",
+      "content_type": "field_definition"
+    }
+  }
+]

@@ -60,7 +60,7 @@ Both are excluded through `.gitignore`.
 
 ---
 
-## Knowledge Base
+#### Knowledge Base
 
 The project uses only  TM Forum API specifications obtained through authorized access to the TM Forum website.
 
@@ -76,7 +76,7 @@ No proprietary employer, customer, or internal telecom documentation is included
 
 ---
 
-## RAG Architecture
+##### RAG Architecture
 
 The final architecture evolved iteratively as retrieval failures were discovered during testing.
 
@@ -111,7 +111,7 @@ The final architecture evolved iteratively as retrieval failures were discovered
                       │
                   Citations
 
-## Technology stack
+###### Technology stack
 
 PDF ingestion	Python document loader
 Chunking- 	LangChain recursive text splitting
@@ -126,7 +126,7 @@ Evaluation	 Custom Python evaluation
 UI -	Streamlit
 
 
-## Retrieval Pipeline
+####### Retrieval Pipeline
 1. Dense retrieval — semantic vector search using Pinecone
 2. BM25 retrieval — exact keyword and technical-term matching
 3. Reciprocal Rank Fusion (RRF) — combines dense and sparse rankings

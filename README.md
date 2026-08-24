@@ -111,7 +111,22 @@ The final architecture evolved iteratively as retrieval failures were discovered
                       │
                   Citations
 
-**Retrieval Pipeline**
+## Technology stack
+
+PDF ingestion	Python document loader
+Chunking- 	LangChain recursive text splitting
+Embeddings	-Nebius / Qwen3-Embedding-8B
+Vector - database	Pinecone
+Sparse retrieval-	BM25
+Rank fusion	- Reciprocal Rank Fusion
+Reranking	Nebius-hosted instruction LLM
+Generation -	Nebius-hosted instruction LLM
+Orchestration -	LangGraph
+Evaluation	 Custom Python evaluation
+UI -	Streamlit
+
+
+## Retrieval Pipeline
 1. Dense retrieval — semantic vector search using Pinecone
 2. BM25 retrieval — exact keyword and technical-term matching
 3. Reciprocal Rank Fusion (RRF) — combines dense and sparse rankings
@@ -134,14 +149,14 @@ However, BM25 struggled when closely related resources shared similar terminolog
 The two approaches were therefore combined using hybrid retrieval + Reciprocal Rank Fusion.
 LLM reranking was then added because the correct evidence was often present in the candidate set but was not always ranked first.
 
-**Evidence-Based Refusal**
+## Evidence-Based Refusal
 A key design goal was preventing unsupported answers.
 LangGraph performs an evidence-sufficiency check before answer generation.
 For example:
 Question
 What is the SLA for resolving a payment dispute?
 
-**Response**
+## Response
 I could not find enough information in the retrieved TM Forum documentation.
 
 The assistant therefore has an explicit answer-or-refuse path rather than generating an answer from weakly related evidence.
@@ -149,7 +164,7 @@ Grounding Rules
 The answer-generation prompt includes strict grounding requirements.
 
 
-**Project Structure**
+## Project Structure
 telco-rag/
 │
 ├── data/
